@@ -29,6 +29,7 @@ export default function IndexPage() {
       <Header 
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
+        isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
       />
       <Sidebar isSidebarOpen={isSidebarOpen} />
