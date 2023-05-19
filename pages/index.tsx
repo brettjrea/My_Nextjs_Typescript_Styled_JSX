@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
+import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
 import Link from 'next/link'
 
 export default function IndexPage() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Retrieve theme preference from local storage when component mounts
   useEffect(() => {
@@ -20,7 +23,13 @@ export default function IndexPage() {
 
   return (
     <div className={isDarkMode ? 'dark' : 'light'}>
-      <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
+      <Header 
+        isDarkMode={isDarkMode}
+        toggleTheme={toggleTheme}
+        toggleSidebar={toggleSidebar}
+      />
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <main>
       <h1>Hi there 👋</h1>
       <h2>My name is Brett. I love computers, the internet, and learning to program for them.</h2>
       <ul>
@@ -39,9 +48,7 @@ export default function IndexPage() {
         <li>⚡ Fun fact: ...</li>
       </ul>
       <img src="https://github-readme-stats.vercel.app/api?username=brettjrea&show_icons=true&theme=transparent" alt="Brett J Rea's GitHub stats"/>
-      <div>
-        <Link href="/about">About</Link>
-      </div>
+      </main>
       <style jsx>{`
         div {
           margin: 0 auto;
