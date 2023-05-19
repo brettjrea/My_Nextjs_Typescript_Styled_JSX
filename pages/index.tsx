@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function IndexPage() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Retrieve theme preference from local storage when component mounts
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    setIsDarkMode(savedTheme === 'dark');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+
+    // Save theme preference in local storage
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+  }
+
   return (
-    <div>
+    <div className={isDarkMode ? 'dark' : 'light'}>
+      <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
       <h1>Hi there 👋</h1>
       <h2>My name is Brett. I love computers, the internet, and learning to program for them.</h2>
       <ul>
@@ -30,16 +48,30 @@ export default function IndexPage() {
           max-width: 800px;
           padding: 1em;
           font-family: Arial, sans-serif;
-          color: #333;
+          color: ${isDarkMode ? '#DDD' : '#333'};
+          background-color: ${isDarkMode ? '#333' : '#FFF'};
+          transition: all 0.5s ease;
         }
         h1 {
-          color: #0070f3;
+          color: ${isDarkMode ? '#CCC' : '#0070f3'};
+        }
+        button {
+          padding: 10px;
+          margin-bottom: 20px;
+          background-color: ${isDarkMode ? '#0070f3' : '#333'};
+          color: ${isDarkMode ? '#333' : '#FFF'};
+          border: none;
+          cursor: pointer;
+          transition: all 0.5s ease;
+        }
+        button:hover {
+          background-color: ${isDarkMode ? '#0050b3' : '#111'};
         }
         ul {
           padding-left: 20px;
         }
         li {
-          line-height: 1.5;
+          line-height:1.5;
         }
         img {
           max-width: 100%;
