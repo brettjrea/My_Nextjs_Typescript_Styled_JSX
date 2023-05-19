@@ -33,7 +33,7 @@ export default function IndexPage() {
         toggleSidebar={toggleSidebar}
       />
       <Sidebar isSidebarOpen={isSidebarOpen} />
-      <Main />
+      <Main isSidebarOpen={isSidebarOpen} />
       <style jsx>{`
       margin-left: ${isSidebarOpen ? '250px' : '0'};
         .light {
