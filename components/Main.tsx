@@ -3,7 +3,6 @@
 export default function Main({ isSidebarOpen }) {
   return (
     <main>
-      {/* Insert the main content of your site here */}
       <h1>Welcome to Brett J Rea's Portfolio</h1>
       <p>...</p>
 
