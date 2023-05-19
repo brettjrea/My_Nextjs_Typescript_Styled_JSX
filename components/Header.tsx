@@ -1,16 +1,11 @@
 // components/Header.tsx
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-export default function Header({ isDarkMode, toggleTheme, toggleSidebar }) {
+export default function Header({ isDarkMode, toggleTheme, toggleSidebar, isSidebarOpen }) {
   return (
     <header>
       <button onClick={toggleSidebar}>
-        <img src="/icons/menu.svg" alt="Menu" />
-      </button>
-      <button onClick={toggleTheme}>
-        <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-      </button>
+          {isSidebarOpen ? 'Close' : 'Open'} Sidebar
+        </button>
+      <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
 
       <style jsx>{`
         header {
