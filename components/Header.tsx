@@ -6,7 +6,7 @@ export default function Header({ isDarkMode, toggleTheme, toggleSidebar }) {
   return (
     <header>
       <button onClick={toggleSidebar}>
-        {isSidebarOpen ? 'Close' : 'Open'} Sidebar
+        <img src="/icons/menu.svg" alt="Menu" />
       </button>
       <button onClick={toggleTheme}>
         <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
