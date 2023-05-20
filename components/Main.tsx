@@ -20,7 +20,7 @@ export default function Main() {
         <li>😄 Pronouns: ...</li>
         <li>⚡ Fun fact: ...</li>
       </ul>
-      <img src="https://github-readme-stats.vercel.app/api?username=brettjrea&show_icons=true&theme=transparent" alt="Brett J Rea's GitHub stats"/>
+      <img style="width=80vw" height="auto" src="https://github-readme-stats.vercel.app/api?username=brettjrea&show_icons=true&theme=transparent" alt="Brett J Rea's GitHub stats"/>
       
 
       <style jsx>{`
