@@ -1,13 +1,6 @@
 // pages/_app.tsx
-import '../styles/globals.css'
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
-// pages/_app.tsx
 import { useState } from 'react'
+import '../styles/globals.css'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Sidebar from '../components/Sidebar'
