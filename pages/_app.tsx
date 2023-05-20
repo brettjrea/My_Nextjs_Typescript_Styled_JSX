@@ -1,27 +1,32 @@
 // pages/_app.tsx
-import { AppProps } from 'next/app';
-import { useState } from 'react'
-import '../styles/globals.css'
-import Header from '../components/Header'
-import Sidebar from '../components/Sidebar'
+import { useState, useEffect } from 'react'
+import Layout from '../components/Layout'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // New state
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
+    localStorage.setItem('isDarkMode', JSON.stringify(!isDarkMode));
   };
 
-  const toggleSidebar = () => { // New function
+  const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  useEffect(() => {
+    const storedThemePreference = JSON.parse(localStorage.getItem('isDarkMode'));
+    if (storedThemePreference) {
+      setIsDarkMode(storedThemePreference);
+    }
+  }, []);
+
   return (
-    <div className="app">
-      <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <Sidebar isDarkMode={isDarkMode} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+    <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
       <Component {...pageProps} />
-    </div>
+    </Layout>
   )
 }
+
+export default MyApp;
