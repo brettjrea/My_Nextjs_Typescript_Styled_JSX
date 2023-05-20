@@ -1,26 +1,22 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 
-export default function Sidebar({ isDarkMode, isSidebarOpen, toggleSidebar }) {
+export default function Sidebar({ isDarkMode }) {
   return (
-    <div style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0px', height: '100vh' }}>
+    <div style={{ width: '250px', backgroundColor: isDarkMode ? '#333' : '#f5f5f5' }}>
       <nav>
-        {isSidebarOpen &&
-          <ul>
+        <ul>
+          <li>
             <Link href="/about">About</Link>
-          </ul>
-        }
+          </li>
+          {/* Add more links as needed */}
+        </ul>
       </nav>
-      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
-        {isSidebarOpen ? '<' : '>'}
-      </button>
+
       <style jsx>{`
         nav {
-          width: 100%;
-          height: 100%;
-          background-color: #f5f5f5;
-          overflow: auto;
-          transition: width 0.5s ease;
+          padding: 1em;
+          color: ${isDarkMode ? '#fff' : '#333'};
         }
       `}</style>
     </div>
