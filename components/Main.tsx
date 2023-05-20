@@ -1,6 +1,10 @@
 // components/Main.tsx
 
-export default function Main() {
+type MainProps = {
+  isDarkMode: boolean;
+};
+
+const Main: React.FC<MainProps> = ({ isDarkMode }) => {
   return (
     <main>
       <h1>Hi there 👋</h1>
@@ -21,13 +25,16 @@ export default function Main() {
         <li>⚡ Fun fact: ...</li>
       </ul>
       <img src="https://github-readme-stats.vercel.app/api?username=brettjrea&show_icons=true&theme=transparent" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
-      
 
       <style jsx>{`
         main {
           padding: 1em;
+          background: ${isDarkMode ? 'black' : 'white'};
+          color: ${isDarkMode ? 'white' : 'black'};
         }
       `}</style>
     </main>
   )
 }
+
+export default Main;
