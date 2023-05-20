@@ -26,6 +26,3 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </div>
   )
 }
-
-export default MyApp
-
