@@ -1,7 +1,7 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 
-export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
+export default function Sidebar({ isDarkMode, isSidebarOpen, toggleSidebar }) {
   return (
     <div style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0px', height: '100vh' }}>
       <nav>
