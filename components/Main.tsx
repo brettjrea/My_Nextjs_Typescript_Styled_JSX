@@ -2,7 +2,7 @@
 
 export default function Main({ isSidebarOpen }) {
   return (
-    <main>
+    <main style={{marginLeft: isSidebarOpen ? '250px' : '0'}}>
       <h1>Welcome to Brett J Rea's Portfolio</h1>
       <p>...</p>
 

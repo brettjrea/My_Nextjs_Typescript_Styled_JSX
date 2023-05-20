@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
   return (
     <nav>
-      <button onClick={toggleSidebar}>
+      <button onClick={toggleSidebar} style={{position: 'absolute', left: isSidebarOpen ? '250px' : '0'}}>
         {isSidebarOpen ? '<' : '>'}
       </button>
       {isSidebarOpen &&
@@ -13,21 +13,18 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
           {/* Add more navigation links here */}
         </ul>
       }
-
       <style jsx>{`
         nav {
-          width: ${isSidebarOpen ? '250px' : '50px'};
+          position: absolute;
+          width: ${isSidebarOpen ? '250px' : '0'};
           background-color: #f5f5f5;
           overflow: auto;
           transition: width 0.5s ease;
         }
         button {
-          position: absolute;
-          right: ${isSidebarOpen ? '0' : '-20px'};
-          top: 0;
           background: none;
           border: none;
-          color: #333; 
+          color: #333; // or any other color
         }
       `}</style>
     </nav>
