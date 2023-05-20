@@ -24,19 +24,16 @@ export default function IndexPage() {
     }
   }, []);
 
-// pages/index.tsx
-
 return (
-    <div className={isDarkMode ? 'dark' : 'light'}>
-      <Header 
-        isDarkMode={isDarkMode}
-        toggleTheme={toggleTheme}
-      />
-      <div style={{ display: 'flex' }}>
-        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+  <div className={isDarkMode ? 'dark' : 'light'} style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
+    <div style={{ display: 'flex', flex: '1' }}>
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div style={{width: '100%'}}>
+        <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         <Main />
       </div>
-      ...
     </div>
-  )
+    ...
+  </div>
+)
 }
