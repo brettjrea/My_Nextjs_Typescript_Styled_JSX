@@ -23,10 +23,11 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
         }
         button {
           position: absolute;
-          right: 0;
+          right: ${isSidebarOpen ? '0' : '-20px'};
           top: 0;
           background: none;
           border: none;
+          color: #333; 
         }
       `}</style>
     </nav>
