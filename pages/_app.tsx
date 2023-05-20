@@ -3,7 +3,6 @@ import { AppProps } from 'next/app';
 import { useState } from 'react'
 import '../styles/globals.css'
 import Header from '../components/Header'
-import Main from '../components/Main'
 import Sidebar from '../components/Sidebar'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -22,7 +21,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <div className="app">
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Sidebar isDarkMode={isDarkMode} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <Main isDarkMode={isDarkMode} />
       <Component {...pageProps} />
     </div>
   )
