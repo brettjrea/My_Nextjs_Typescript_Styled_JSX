@@ -24,7 +24,9 @@ export default function IndexPage() {
     }
   }, []);
 
-  return (
+// pages/index.tsx
+
+return (
     <div className={isDarkMode ? 'dark' : 'light'}>
       <Header 
         isDarkMode={isDarkMode}
@@ -32,7 +34,7 @@ export default function IndexPage() {
       />
       <div style={{ display: 'flex' }}>
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <Main isSidebarOpen={isSidebarOpen} />
+        <Main />
       </div>
       ...
     </div>
