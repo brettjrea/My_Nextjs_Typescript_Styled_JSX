@@ -22,6 +22,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <div className="app">
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Sidebar isDarkMode={isDarkMode} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Main isDarkMode={isDarkMode} />
       <Component {...pageProps} />
     </div>
   )
