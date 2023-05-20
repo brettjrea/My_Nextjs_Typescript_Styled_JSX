@@ -10,19 +10,19 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
             ...
           </ul>
         }
-        <style jsx>{`
-          nav {
-            width: 100%;
-            height: 100%;
-            background-color: #f5f5f5;
-            overflow: auto;
-            transition: width 0.5s ease;
-          }
-        `}</style>
       </nav>
       <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'red' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
+      <style jsx>{`
+        nav {
+          width: 100%;
+          height: 100%;
+          background-color: #f5f5f5;
+          overflow: auto;
+          transition: width 0.5s ease;
+        }
+      `}</style>
     </div>
   )
 }
