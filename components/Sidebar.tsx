@@ -16,10 +16,6 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
 
       <style jsx>{`
         nav {
-          position: fixed;
-          left: 0;
-          top: 0;
-          bottom: 0;
           width: ${isSidebarOpen ? '250px' : '50px'};
           background-color: #f5f5f5;
           overflow: auto;

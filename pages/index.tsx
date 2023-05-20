@@ -30,8 +30,10 @@ export default function IndexPage() {
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
       />
-      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <Main isSidebarOpen={isSidebarOpen} />
+      <div style={{display: 'flex'}}>
+        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <Main isSidebarOpen={isSidebarOpen} />
+      </div>
       <style jsx>{`
         .light {
           background-color: #fff;
