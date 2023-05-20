@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
   return (
-    <div style={{ position: 'relative', width: isSidebarOpen ? '250px' : '50px', height: '100vh' }}>
+    <div style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0px', height: '100vh' }}>
       <nav>
         {isSidebarOpen &&
           <ul>
@@ -11,7 +11,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
           </ul>
         }
       </nav>
-      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'red' }}>
+      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
       <style jsx>{`
