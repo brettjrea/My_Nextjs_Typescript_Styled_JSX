@@ -1,10 +1,7 @@
 // components/Header.tsx
-export default function Header({ isDarkMode, toggleTheme, toggleSidebar, isSidebarOpen }) {
+export default function Header({ isDarkMode, toggleTheme }) {
   return (
     <header>
-      <button onClick={toggleSidebar}>
-          {isSidebarOpen ? 'Close' : 'Open'} Sidebar
-        </button>
       <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
 
       <style jsx>{`

@@ -1,15 +1,18 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 
-export default function Sidebar({ isSidebarOpen }) {
-  if (!isSidebarOpen) return null;
-  
+export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
   return (
     <nav>
-      <ul>
-        <li><Link href="/about">About</Link></li>
-        {/* Add more navigation links here */}
-      </ul>
+      <button onClick={toggleSidebar}>
+        {isSidebarOpen ? '<' : '>'}
+      </button>
+      {isSidebarOpen &&
+        <ul>
+          <li><Link href="/about">About</Link></li>
+          {/* Add more navigation links here */}
+        </ul>
+      }
 
       <style jsx>{`
         nav {
@@ -17,9 +20,17 @@ export default function Sidebar({ isSidebarOpen }) {
           left: 0;
           top: 0;
           bottom: 0;
-          width: 250px;
+          width: ${isSidebarOpen ? '250px' : '0'};
           background-color: #f5f5f5;
           overflow: auto;
+          transition: width 0.5s ease;
+        }
+        button {
+          position: absolute;
+          right: ${isSidebarOpen ? '0' : '-50px'};
+          top: 0;
+          background: none;
+          border: none;
         }
       `}</style>
     </nav>

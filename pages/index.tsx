@@ -29,13 +29,10 @@ export default function IndexPage() {
       <Header 
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
       />
-      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Main isSidebarOpen={isSidebarOpen} />
       <style jsx>{`
-      margin-left: ${isSidebarOpen ? '250px' : '0'};
         .light {
           background-color: #fff;
           color: #333;
@@ -48,3 +45,4 @@ export default function IndexPage() {
     </div>
   )
 }
+
