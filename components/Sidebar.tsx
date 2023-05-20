@@ -7,7 +7,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
       <nav>
         {isSidebarOpen &&
           <ul>
-            ...
+            <Link href="/about">About</Link>
           </ul>
         }
       </nav>
