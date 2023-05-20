@@ -1,14 +1,18 @@
 // pages/_app.tsx
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
-import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
     localStorage.setItem('isDarkMode', JSON.stringify(!isDarkMode));
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   useEffect(() => {
@@ -19,7 +23,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme}>
+    <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
       <Component {...pageProps} />
     </Layout>
   )
