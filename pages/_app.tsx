@@ -1,4 +1,5 @@
 // pages/_app.tsx
+import { AppProps } from 'next/app';
 import { useState } from 'react'
 import '../styles/globals.css'
 import Header from '../components/Header'
