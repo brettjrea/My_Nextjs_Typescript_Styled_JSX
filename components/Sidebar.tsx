@@ -3,20 +3,22 @@ import Link from 'next/link'
 
 const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
   return (
-    <div style={{ position: 'fixed', left: isSidebarOpen ? '0px' : '-250px', height: '100vh', transition: 'left 0.5s' }}>
+    <div style={{ position: 'fixed', width: '250px', height: '100vh' }}>
       <nav>
-        <ul>
-          <Link href="/about">About</Link>
-        </ul>
+        {isSidebarOpen &&
+          <ul>
+            <Link href="/about">About</Link>
+          </ul>
+        }
       </nav>
       <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
       <style jsx>{`
         div {
-          width: 250px;
           background-color: ${isDarkMode ? '#333' : '#fff'};
           color: ${isDarkMode ? '#fff' : '#333'};
+          transition: width 0.5s ease;
         }
         ul {
           padding-right: 20px;
