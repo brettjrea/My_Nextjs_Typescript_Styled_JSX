@@ -1,7 +1,7 @@
 // components/Header.tsx
-export default function Header({ isDarkMode, toggleTheme }) {
+const Header = ({ isDarkMode, toggleTheme }) => {
   return (
-    <header style={{ width: '100vw' }}>
+    <header style={{ width: '100%' }}>
       <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
 
       <style jsx>{`
@@ -17,3 +17,5 @@ export default function Header({ isDarkMode, toggleTheme }) {
     </header>
   )
 }
+
+export default Header;
