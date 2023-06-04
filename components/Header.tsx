@@ -1,7 +1,7 @@
 // components/Header.tsx
 const Header = ({ isDarkMode, toggleTheme }) => {
   return (
-    <header style={{ width: '100%' }}>
+    <header>
       <button onClick={toggleTheme}>Switch to {isDarkMode ? 'light' : 'dark'} mode</button>
 
       <style jsx>{`
