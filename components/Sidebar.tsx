@@ -1,4 +1,5 @@
 // components/Sidebar.tsx
+
 import Link from 'next/link'
 
 const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
@@ -18,7 +19,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           </ul>
         }
       </nav>
-      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
+      <button onClick={toggleSidebar} style={{ position: 'absolute', right: isSidebarOpen ? '-20px' : '0', top: '0', backgroundColor: 'gray' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
       <style jsx>{`
