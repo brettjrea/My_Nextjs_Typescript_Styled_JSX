@@ -19,6 +19,9 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           background-color: ${isDarkMode ? '#333' : '#fff'};
           color: ${isDarkMode ? '#fff' : '#333'};
         }
+        ul {
+          padding-right: 20px;
+        }
         button {
           background-color: ${isDarkMode ? '#fff' : 'gray'};
           color: ${isDarkMode ? '#333' : '#fff'};
