@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
   return (
-    <div style={{ position: 'relative', width: '250px', height: '100vh' }}>
+    <div style={{ position: 'fixed', width: '250px', height: '100vh' }}>
       <nav>
         {isSidebarOpen &&
           <ul>
