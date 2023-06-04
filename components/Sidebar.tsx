@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
   return (
     <div style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0', transition: 'width 0.5s ease', height: '100vh' }}>
-      <nav>
+      <nav style={{ width: '100%', height: '100%', overflow: 'auto' }}>
         {isSidebarOpen && 
           <ul>
             <li><Link href="/about">About</Link></li>
@@ -16,7 +16,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       </button>
       <style jsx>{`
         nav {
-          overflow: auto;
+          transition: width 0.5s ease;
         }
         ul {
           padding-right: 20px;
