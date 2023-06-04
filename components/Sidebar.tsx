@@ -16,6 +16,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       </button>
       <style jsx>{`
         nav {
+          width: 250px;
           overflow: auto;
         }
         ul {
