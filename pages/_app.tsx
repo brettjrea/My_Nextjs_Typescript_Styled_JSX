@@ -25,6 +25,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
       <Component {...pageProps} />
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+      `}</style>
     </Layout>
   )
 }
