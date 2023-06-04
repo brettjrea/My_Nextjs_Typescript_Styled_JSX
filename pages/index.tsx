@@ -19,7 +19,7 @@ export default function IndexPage() {
         <li>😄 Pronouns: ...</li>
         <li>⚡ Fun fact: ...</li>
       </ul>
-      <img src="https://my-github-readme-stats-roan.vercel.app/api?username=brettjrea&rank_icon=github=true&theme=transparent" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
+      <img src="https://my-github-readme-stats-steel.vercel.app//api?username=brettjrea&rank_icon=github=true&theme=transparent" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
 
       <style jsx>{`
         main {
