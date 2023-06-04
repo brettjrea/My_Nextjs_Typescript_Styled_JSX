@@ -20,6 +20,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         ul {
           padding-right: 20px;
+          list-style: none;
         }
       `}</style>
     </div>
