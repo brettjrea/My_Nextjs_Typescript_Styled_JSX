@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
     <div className={isDarkMode ? 'dark' : 'light'} style={{height: '100vh', display: 'flex', flexDirection: 'column', transition: 'margin-left 0.5s', marginLeft: isSidebarOpen ? '250px' : '0px'}}>
       <div style={{ display: 'flex', flex: '1' }}>
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} />
-        <div style={{width: isSidebarOpen ? 'calc(100% - 250px)' : '100%'}}>
+        <div style={{width: '100%'}}>
           <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
           {children}
         </div>
