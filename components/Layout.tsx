@@ -21,6 +21,12 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
           {children}
         </div>
       </div>
+      <style jsx>{`
+        div {
+          background-color: ${isDarkMode ? '#333' : '#fff'};
+          color: ${isDarkMode ? '#fff' : '#333'};
+        }
+      `}</style>
     </div>
   );
 }
