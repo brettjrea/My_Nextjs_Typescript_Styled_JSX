@@ -8,8 +8,8 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen && 
           <ul>
             <li>
-              <Link href="/about">
-                <a className={isDarkMode ? 'dark-mode' : ''} style={{ textDecoration: 'none', color: isDarkMode ? '#000' : '#FFF'}}>About</a>
+              <Link style={{ textDecoration: "none", color: "white" }} href="/about">
+                <a className={isDarkMode ? 'dark-mode' : ''}>About</a>
               </Link>
             </li>
           </ul>
