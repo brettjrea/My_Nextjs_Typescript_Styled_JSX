@@ -1,5 +1,5 @@
 //pages/index.tsx
-export default function IndexPage() {
+function IndexPage() {
   return (
     <main>
       <h1>Hi there 👋</h1>
@@ -20,7 +20,6 @@ export default function IndexPage() {
         <li>⚡ Fun fact: ...</li>
       </ul>
       <img src="https://my-github-readme-stats-steel.vercel.app//api?username=brettjrea&rank_icon=github&theme=transparent" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
-      <img src="https://my-github-readme-stats-steel.vercel.app/api/top-langs/?username=brettjrea" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
       <style jsx>{`
         main {
           padding: 1em;
@@ -31,3 +30,5 @@ export default function IndexPage() {
     </main>
   )
 }
+
+export default IndexPage;
