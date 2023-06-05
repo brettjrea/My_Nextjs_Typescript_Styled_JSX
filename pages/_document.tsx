@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="shortcut icon" href="icons/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
           <title>brettjrea.dev</title>
