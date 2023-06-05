@@ -16,7 +16,7 @@ function IndexPage() {
         <li>🤔 I’m looking for help with ...</li>
         <li>💬 Ask me about ...</li>
         <li>📫 How to reach me: ...</li>
-        <li>😄 Pronouns: ...</li>
+        <li>😄 Pronouns: I'm a dude, He's a dude, She's a dude, We're all dudes, Hey!</li>
         <li>⚡ Fun fact: ...</li>
       </ul>
       <img src="https://my-github-readme-stats-steel.vercel.app//api?username=brettjrea&rank_icon=github&theme=transparent" alt="Brett J Rea's GitHub stats" width="100%" height="auto"/>
