@@ -13,12 +13,17 @@ function MyApp({ Component, pageProps }) {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    localStorage.setItem('isSidebarOpen', JSON.stringify(!isSidebarOpen));
   };
 
   useEffect(() => {
     const storedThemePreference = JSON.parse(localStorage.getItem('isDarkMode'));
+    const storedSidebarState = JSON.parse(localStorage.getItem('isSidebarOpen'));
     if (storedThemePreference) {
       setIsDarkMode(storedThemePreference);
+    }
+    if (storedSidebarState) {
+      setIsSidebarOpen(storedSidebarState);
     }
   }, []);
 
