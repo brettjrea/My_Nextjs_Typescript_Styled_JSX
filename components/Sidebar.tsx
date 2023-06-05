@@ -42,5 +42,3 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
 }
 
 export default Sidebar;
-
-export default Sidebar;
