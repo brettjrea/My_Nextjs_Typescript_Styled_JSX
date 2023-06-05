@@ -7,7 +7,11 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <nav style={{ width: '100%', height: '100%', overflow: 'auto' }}>
         {isSidebarOpen && 
           <ul>
-            <li><Link href="/about">About</Link></li>
+            <li>
+              <Link href="/about">
+                <a className={isDarkMode ? 'dark-mode' : ''}>About</a>
+              </Link>
+            </li>
           </ul>
         }
       </nav>
@@ -29,19 +33,22 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
           color: black;
         }
+        a {
+          color: white;
+          text-decoration: none;
+        }
+        a.dark-mode {
+          color: black;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
         nav {
           transition: width 0.5s ease;
         }
         ul {
           padding-right: 20px;
           list-style: none;
-        }
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
         }
       `}</style>
     </div>
