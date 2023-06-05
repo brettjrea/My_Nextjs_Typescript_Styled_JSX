@@ -25,12 +25,16 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           font-family: Arial, sans-serif;
         }
         a.sidebar-link:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
         a.sidebar-link:visited {
           color: white;
         }
-        div.dark-mode a.sidebar-link {
+        li {
+          color: white;
+        }
+        div.dark-mode a.sidebar-link,
+        div.dark-mode li {
           color: black;
         }
         div.dark-mode a.sidebar-link:visited {
