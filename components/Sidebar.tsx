@@ -9,7 +9,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           <ul>
             <li>
               <Link href="/about">
-                <a className="sidebar-link">About</a>
+                <a className={isDarkMode ? 'dark-mode' : ''}>About</a>
               </Link>
             </li>
           </ul>
@@ -19,27 +19,6 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen ? '<' : '>'}
       </button>
       <style jsx>{`
-        a.sidebar-link {
-          color: white;
-          text-decoration: none;
-          font-family: Arial, sans-serif;
-        }
-        a.sidebar-link:hover {
-          text-decoration: none;
-        }
-        a.sidebar-link:visited {
-          color: white;
-        }
-        li {
-          color: white;
-        }
-        div.dark-mode a.sidebar-link,
-        div.dark-mode li {
-          color: black;
-        }
-        div.dark-mode a.sidebar-link:visited {
-          color: black;
-        }
         div {
           padding: 10px;
           border: none;
@@ -53,6 +32,16 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           background-color: #ccc;
           box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
           color: black;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+        }
+        a.dark-mode {
+          color: black;
+        }
+        a:hover {
+          text-decoration: underline;
         }
         nav {
           transition: width 0.5s ease;
