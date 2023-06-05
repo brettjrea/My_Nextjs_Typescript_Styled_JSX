@@ -19,6 +19,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           padding: 10px;
           border: none;
           background-color: #888;
+          box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
           color: white;
           font-size: 1rem;
           transition: all 0.3s ease;
