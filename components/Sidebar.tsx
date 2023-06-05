@@ -25,7 +25,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         div.dark-mode {
           background-color: #ccc;
-          box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
+          box-shadow: inset 3px -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
           color: black;
         }
         nav {
