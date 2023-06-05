@@ -13,7 +13,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen, toggleSidebar, children }) => {
   return (
-    <div className={isDarkMode ? 'dark' : 'light'} style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
+    <div className={isDarkMode ? 'dark' : 'light'} style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
       <div style={{ display: 'flex', flex: '1' }}>
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} />
         <div style={{width: isSidebarOpen ? 'calc(100% - 250px)' : '100%', transition: 'width 0.5s'}}>
