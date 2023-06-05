@@ -30,12 +30,13 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         div.dark-mode {
           background-color: #ccc;
-          box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
+          box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); 
           color: black;
         }
         a {
           color: white;
           text-decoration: none;
+          font-family: Arial, sans-serif;  
         }
         a.dark-mode {
           color: black;
