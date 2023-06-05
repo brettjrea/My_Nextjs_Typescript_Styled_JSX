@@ -32,3 +32,4 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
 }
 
 export default Layout;
+
