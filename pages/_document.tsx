@@ -8,6 +8,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
+          <title>brettjrea.dev</title>
         </Head>
         <body>
           <Main />
