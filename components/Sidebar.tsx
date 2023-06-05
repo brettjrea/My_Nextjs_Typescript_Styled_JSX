@@ -8,9 +8,9 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen && 
           <ul>
             <li>
-              <Link href="/about">
-                <a className={isDarkMode ? 'dark-mode' : ''}>About</a>
-              </Link>
+              <div className="link-wrapper">
+                <Link href="/about">About</Link>
+              </div>
             </li>
           </ul>
         }
@@ -18,9 +18,23 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
-      <style jsx global>{`
-        a {
-          text-decoration: none !important; // Add !important to override any other styles
+      <style jsx>{`
+        .link-wrapper a {
+          color: white;
+          text-decoration: none;
+          font-family: Arial, sans-serif;
+        }
+        .link-wrapper a:hover {
+          text-decoration: underline;
+        }
+        .link-wrapper a:visited {
+          color: white;
+        }
+        div.dark-mode .link-wrapper a {
+          color: black;
+        }
+        div.dark-mode .link-wrapper a:visited {
+          color: black;
         }
         div {
           padding: 10px;
@@ -33,14 +47,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         div.dark-mode {
           background-color: #ccc;
-          box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); 
-          color: black;
-        }
-        a {
-          color: white;
-          font-family: Arial, sans-serif;  
-        }
-        a.dark-mode {
+          box-shadow: inset -3px 3px 5px rgba(0,0,0,0.5); // Changed shadow style
           color: black;
         }
         nav {
