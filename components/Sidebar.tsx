@@ -1,9 +1,17 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
+import { useSwipeable } from 'react-swipeable'
 
 const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => toggleSidebar(),
+    onSwipedRight: () => toggleSidebar(),
+    trackMouse: true
+  });
+
   return (
-    <div className={isDarkMode ? 'dark-mode' : ''} style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0', transition: 'width 0.5s ease' }}>
+    <div {...handlers} className={isDarkMode ? 'dark-mode' : ''} style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0', transition: 'width 0.5s ease' }}>
       <nav style={{ width: '100%', height: '100%', overflow: 'auto' }}>
         {isSidebarOpen && 
           <ul>
@@ -19,7 +27,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen ? '👈' : '👉'}
       </button>
       <style jsx>{`
-        div {
+         div {
           padding: 10px;
           border: none;
           background-color: #888;
@@ -50,9 +58,15 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           padding-right: 20px;
           list-style: none;
         }
+        .sidebar-toggle {
+          font-size: 1.6rem;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+        }
       `}</style>
     </div>
   )
 }
 
-export default Sidebar;
+export default Sidebar;  
