@@ -36,6 +36,13 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           padding-right: 20px;
           list-style: none;
         }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
       `}</style>
     </div>
   )
