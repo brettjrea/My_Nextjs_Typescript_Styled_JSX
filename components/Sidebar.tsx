@@ -42,7 +42,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           color: black;
         }
         a:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
         nav {
           transition: width 0.5s ease;
