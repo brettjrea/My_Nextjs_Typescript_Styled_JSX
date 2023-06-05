@@ -17,7 +17,6 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <style jsx>{`
         div {
           padding: 10px;
-          borderRadius: '0 10px 10px 0';
           border: none;
           background-color: #888;
           box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
@@ -27,7 +26,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         div.dark-mode {
           background-color: #ccc;
-          box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);
+          box-shadow: inset 3px 3px 5px rgba(0,0,0,0.5);  // Changed shadow style
           color: black;
         }
         nav {
@@ -41,5 +40,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
     </div>
   )
 }
+
+export default Sidebar;
 
 export default Sidebar;
