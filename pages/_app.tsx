@@ -3,29 +3,33 @@ import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('isDarkMode')
+      return stored ? JSON.parse(stored) : false
+    }
+    return false
+  });
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('isSidebarOpen')
+      return stored ? JSON.parse(stored) : false
+    }
+    return false
+  });
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem('isDarkMode', JSON.stringify(!isDarkMode));
+    const newState = !isDarkMode;
+    setIsDarkMode(newState);
+    localStorage.setItem('isDarkMode', JSON.stringify(newState));
   };
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-    localStorage.setItem('isSidebarOpen', JSON.stringify(!isSidebarOpen));
+    const newState = !isSidebarOpen;
+    setIsSidebarOpen(newState);
+    localStorage.setItem('isSidebarOpen', JSON.stringify(newState));
   };
-
-  useEffect(() => {
-    const storedThemePreference = JSON.parse(localStorage.getItem('isDarkMode'));
-    const storedSidebarState = JSON.parse(localStorage.getItem('isSidebarOpen'));
-    if (storedThemePreference) {
-      setIsDarkMode(storedThemePreference);
-    }
-    if (storedSidebarState) {
-      setIsSidebarOpen(storedSidebarState);
-    }
-  }, []);
 
   return (
     <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
