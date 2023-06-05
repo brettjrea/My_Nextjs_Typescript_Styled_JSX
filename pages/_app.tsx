@@ -3,33 +3,20 @@ import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('isDarkMode')
-      return stored ? JSON.parse(stored) : false
-    }
-    return false
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('isSidebarOpen')
-      return stored ? JSON.parse(stored) : false
-    }
-    return false
-  });
+  useEffect(() => {
+    setIsDarkMode(JSON.parse(localStorage.getItem('isDarkMode')) || false);
+    setIsSidebarOpen(JSON.parse(localStorage.getItem('isSidebarOpen')) || false);
+    setIsHydrated(true); // Mark the app as hydrated after reading from localStorage
+  }, []);
 
-  const toggleTheme = () => {
-    const newState = !isDarkMode;
-    setIsDarkMode(newState);
-    localStorage.setItem('isDarkMode', JSON.stringify(newState));
-  };
-
-  const toggleSidebar = () => {
-    const newState = !isSidebarOpen;
-    setIsSidebarOpen(newState);
-    localStorage.setItem('isSidebarOpen', JSON.stringify(newState));
-  };
+  // Don't render the layout until the app is hydrated, to prevent flashing/snap
+  if (!isHydrated) {
+    return null;
+  }
 
   return (
     <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
@@ -43,6 +30,18 @@ function MyApp({ Component, pageProps }) {
       `}</style>
     </Layout>
   )
+
+  function toggleTheme() {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem('isDarkMode', JSON.stringify(newMode));
+  }
+
+  function toggleSidebar() {
+    const newState = !isSidebarOpen;
+    setIsSidebarOpen(newState);
+    localStorage.setItem('isSidebarOpen', JSON.stringify(newState));
+  }
 }
 
 export default MyApp;
