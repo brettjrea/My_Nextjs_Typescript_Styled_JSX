@@ -18,7 +18,10 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
         {isSidebarOpen ? '<' : '>'}
       </button>
-      <style jsx>{`
+      <style jsx global>{`
+        a {
+          text-decoration: none !important; // Add !important to override any other styles
+        }
         div {
           padding: 10px;
           border: none;
