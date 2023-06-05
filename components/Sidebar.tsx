@@ -17,7 +17,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <style jsx>{`
         div {
           padding: 10px;
-          border-radius: 5px;
+          borderRadius: '0 10px 10px 0';
           border: none;
           background-color: #888;
           box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
