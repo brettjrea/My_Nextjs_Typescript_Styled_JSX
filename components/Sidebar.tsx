@@ -15,7 +15,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           </ul>
         }
       </nav>
-      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray' }}>
+      <button onClick={toggleSidebar} style={{ position: 'absolute', right: '-20px', top: '0', backgroundColor: 'gray', fontSize: '2rem' }}>
         {isSidebarOpen ? '👈' : '👉'}
       </button>
       <style jsx>{`
