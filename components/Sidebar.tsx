@@ -8,9 +8,9 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen && 
           <ul>
             <li>
-              <div className="link-wrapper">
-                <Link href="/about">About</Link>
-              </div>
+              <Link href="/about">
+                <a className="sidebar-link">About</a>
+              </Link>
             </li>
           </ul>
         }
@@ -19,21 +19,21 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen ? '<' : '>'}
       </button>
       <style jsx>{`
-        .link-wrapper a {
+        a.sidebar-link {
           color: white;
           text-decoration: none;
           font-family: Arial, sans-serif;
         }
-        .link-wrapper a:hover {
+        a.sidebar-link:hover {
           text-decoration: underline;
         }
-        .link-wrapper a:visited {
+        a.sidebar-link:visited {
           color: white;
         }
-        div.dark-mode .link-wrapper a {
+        div.dark-mode a.sidebar-link {
           color: black;
         }
-        div.dark-mode .link-wrapper a:visited {
+        div.dark-mode a.sidebar-link:visited {
           color: black;
         }
         div {
