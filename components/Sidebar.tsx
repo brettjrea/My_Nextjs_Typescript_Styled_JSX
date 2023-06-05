@@ -35,14 +35,10 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         }
         a {
           color: white;
-          text-decoration: none;
           font-family: Arial, sans-serif;  
         }
         a.dark-mode {
           color: black;
-        }
-        a:hover {
-          text-decoration: none;
         }
         nav {
           transition: width 0.5s ease;
