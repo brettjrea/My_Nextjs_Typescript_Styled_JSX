@@ -25,9 +25,9 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
         div {
           background-color: ${isDarkMode ? '#333' : '#fff'};
           color: ${isDarkMode ? '#fff' : '#333'};
-          text-shadow: ${isDarkMode ? '-1px -1px 1px rgba(0,0,0,0.3), 1px 1px 1px rgba(255,255,255,0.5)' : '2px 2px 2px rgba(0,0,0,0.5)'};
-      }
-      }
+          text-shadow: ${isDarkMode ? '-0.05rem -0.05rem 0.075rem rgba(0,0,0,0.5), 0.075rem 0.05rem 0.075rem rgba(0,0,0,0.5), -0.05rem -0.05rem 0.05rem rgba(255,255,255,255)' : '0.08rem 0.08rem 0.01rem rgba(0,0,0,0.25)'};
+            }
+          }
         }
       `}</style>
     </div>
@@ -35,4 +35,3 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
 }
 
 export default Layout;
-

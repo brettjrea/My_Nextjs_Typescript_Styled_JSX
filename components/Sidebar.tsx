@@ -13,10 +13,10 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
   return (
     <div {...handlers} className={isDarkMode ? 'dark-mode' : ''} style={{ position: 'relative', width: isSidebarOpen ? '250px' : '0', transition: 'width 0.5s ease' }}>
       <nav style={{ width: '100%', height: '100%', overflow: 'auto' }}>
-        {isSidebarOpen && 
+        {isSidebarOpen &&
           <ul>
             <li>
-              <Link style={{ textDecoration: "none", color: "white" }} href="/about">
+              <Link legacyBehavior style={{ textDecoration: "none", color: "white" }} href="/about">
                 <a className={isDarkMode ? 'dark-mode' : ''}>About</a>
               </Link>
             </li>
@@ -27,6 +27,10 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         {isSidebarOpen ? '👈' : '👉'}
       </button>
       <style jsx>{`
+        button {  
+          text-shadow: ${isDarkMode ? '4px 4px 4px rgba(0,0,0,0.25)' : '4px 4px 4px rgba(0,0,0,0.25)'};
+          text-shadow: ${isSidebarOpen ? '-4px 4px 4px rgba(0,0,0,0.5)' : '4px 4px 4px rgba(0,0,0,0.75)'};
+        }
          div {
           padding: 10px;
           border: none;
@@ -34,7 +38,8 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
           box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
           color: white;
           font-size: 1rem;
-          transition: all 0.3s ease;
+          transition: all 1s ease;
+          
         }
         div.dark-mode {
           background-color: #ccc;
@@ -44,9 +49,11 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         a {
           color: white;
           text-decoration: none;
+          
         }
         a.dark-mode {
           color: black;
+
         }
         a:hover {
           text-decoration: underline;
@@ -57,6 +64,7 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
         ul {
           padding-right: 20px;
           list-style: none;
+          
         }
         .sidebar-toggle {
           font-size: 1.6rem;

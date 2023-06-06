@@ -20,6 +20,12 @@ function IndexPage() {
           padding: 1em;
           color: inherit;
           background: inherit;
+          transition: all 1s ease;
+        }
+        ul {
+          padding-right: 20px;
+          list-style: none;
+          font-size: 1.6rem;
         }
       `}</style>
     </main>

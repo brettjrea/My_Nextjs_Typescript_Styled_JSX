@@ -18,9 +18,10 @@ function MyApp({ Component, pageProps }) {
     return null;
   }
 
-  return (
+  return (  
     <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}>
       <Component {...pageProps} />
+      <title>brettjrea.dev</title>
       <style jsx global>{`
         body {
           margin: 0;
