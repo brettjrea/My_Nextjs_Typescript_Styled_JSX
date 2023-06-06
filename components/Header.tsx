@@ -3,7 +3,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
   return (
     <header>
       <button className={isDarkMode ? 'dark-mode' : ''} onClick={toggleTheme}>
-       {isDarkMode ? '☀️' : '🌙'} mode
+       {isDarkMode ? '☀️' : '🌙'}
       </button>
 
       <style jsx>{`
