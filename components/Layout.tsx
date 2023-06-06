@@ -23,8 +23,8 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
       </div>
       <style jsx>{`
         div {
-          background-color: ${isDarkMode ? '#ccc' : '#888'};
-          color: ${isDarkMode ? '#888' : '#ccc'};
+          background-color: ${isDarkMode ? '#888' : '#ccc'};
+          color: ${isDarkMode ? '#ccc' : '#888'};
           text-shadow: ${isDarkMode ? '-1px -1px 1px rgba(0,0,0,0.3), 1px 1px 1px rgba(255,255,255,0.5)' : '2px 2px 2px rgba(0,0,0,0.5)'};
       }
       }
