@@ -29,17 +29,18 @@ const Sidebar = ({ isDarkMode, isSidebarOpen, toggleSidebar }) => {
       <style jsx>{`
         button {  
           text-shadow: ${isDarkMode ? '4px 4px 4px rgba(0,0,0,0.25)' : '4px 4px 4px rgba(0,0,0,0.25)'};
-          text-shadow: ${isSidebarOpen ? '-4px 4px 4px rgba(0,0,0,0.5)' : '4px 4px 4px rgba(0,0,0,0.75)'};
+          text-shadow: ${isSidebarOpen ? '-4px 4px 4px rgba(0,0,0,0.5)' : '-4px 4px 4px rgba(0,0,0,0.75)'};
         }
          div {
           padding: 10px;
           border: none;
           background-color: #888;
-          box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+          box-shadow: inset -.25rem 0rem .5rem rgba(0,0,0,0.3);
           color: white;
           font-size: 1rem;
           transition: all 1s ease;
-          
+          outline: .001rem solid black;
+   
         }
         div.dark-mode {
           background-color: #ccc;
