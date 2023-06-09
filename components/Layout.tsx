@@ -25,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ isDarkMode, toggleTheme, isSidebarOpen,
         div {
           background-color: ${isDarkMode ? '#333' : '#fff'};
           color: ${isDarkMode ? '#fff' : '#333'};
-          text-shadow: ${isDarkMode ? '-.1rem -.06rem .07rem rgba(0,0,0,0.5), .07rem -.06rem .07rem rgba(255,255,255,0.5)' : '-0.1rem 0.1rem 0.1rem rgba(0,0,0,0.25)'};
+          text-shadow: ${isDarkMode ? '.1rem -.06rem .07rem rgba(0,0,0,0.5), -.1rem -.06rem .07rem rgba(0,0,0,0.5), .07rem -.06rem .05rem rgba(255,255,255,0.7), -.07rem -.06rem .05rem rgba(255,255,255,0.7)' : '-0.1rem 0.1rem 0.1rem rgba(0,0,0,0.25)'};
             }
           }
         }
